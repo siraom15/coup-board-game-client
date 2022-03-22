@@ -1,6 +1,5 @@
 <script setup>
-
-
+import SignDiv from '../components/SignDiv.vue';
 
 const props = defineProps({
   player: {
@@ -22,7 +21,6 @@ const bgStyle = {
   <div
     class="text-center py-2 px-4 border-b-4 border-r-4"
     :class="isCurrentTurn ? bgStyle.yellow : bgStyle.white"
-    
   >
     <span class="text-base font-bungee">
       <span class="text-red-600 m-1">
@@ -43,5 +41,6 @@ const bgStyle = {
         class="w-12 sm:w-12 md:w-16 lg:w-20 xl:w-24"
       />
     </div>
+    <SignDiv text="Current Coin : 1" />
   </div>
 </template>

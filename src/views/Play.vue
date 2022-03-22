@@ -39,7 +39,7 @@ const challenges = {
 
 <template>
   <div class="h-screen">
-    <ChallengeActionModal :isShow="false" />
+    <ChallengeActionModal :isShow="true" />
     <SignDiv text="COUP GAME" />
     <div class="flex justify-end">
       <div class="flex">
@@ -50,15 +50,16 @@ const challenges = {
       </div>
     </div>
 
-    <div class="grid grid-cols-3 mt-5">
+    <div class="lg:grid lg:grid-cols-3 flex flex-col">
       <!-- Turn -->
-      <div class="flex flex-col items-center">
-        <span class="text-2xl font-bungee text-center">
-          <span class="text-yellow-300">
-            <span>TURN</span>
-          </span>
-        </span>
-        <div class="mt-2 flex flex-col items-center justify-center gap-2">
+      <div class="flex flex-col justify-center items-center p-2">
+        <TwoColorText
+          left="TURN"
+          class="text-xl sm:text-xl md:text-2xl lg:text-4xl"
+        />
+        <div
+          class="justify-center items-center gap-1 flex flex-row lg:flex lg:flex-col"
+        >
           <PlayerTurn :player="player1" :isCurrentTurn="true" />
           <PlayerTurn :player="player2" :isCurrentTurn="false" />
           <PlayerTurn :player="player2" :isCurrentTurn="false" />
@@ -67,7 +68,7 @@ const challenges = {
       </div>
 
       <!-- current card -->
-      <div class="mt-2 flex flex-col justify-center items-center gap-2">
+      <div class="flex flex-col justify-center items-center gap-2 p-2">
         <SignDiv text="Game Log Lastest : P1 Income" />
         <TwoColorText
           left="Your"
@@ -79,11 +80,15 @@ const challenges = {
       </div>
 
       <!-- Actions -->
-      <div class="mt-2 flex flex-col justify-center items-center gap-2">
+      <div class="flex flex-col justify-center items-center gap-2 p-2">
         <div class="grid grid-cols-2 gap-3">
-          <div class="flex flex-col">
-            <TwoColorText left="ALL" right="ACTION" />
-            <div class="flex flex-col gap-1 justify-start">
+          <div class="flex flex-col items-center gap-1">
+            <TwoColorText
+              left="ALL"
+              right="ACTION"
+              class="text-xl sm:text-xl md:text-2xl lg:text-2xl"
+            />
+            <div class="flex flex-col gap-1 justify-center items-center">
               <BaseButton text="income (+1)" />
               <BaseButton text="foreign aid (+2)" />
               <BaseButton text="tax (+3)" />
@@ -93,9 +98,13 @@ const challenges = {
               <BaseButton text="steal (+2)" />
             </div>
           </div>
-          <div class="flex flex-col">
-            <TwoColorText left="COUNTER" right="ACTION" />
-            <div class="flex flex-col gap-2">
+          <div class="flex flex-col items-center gap-1">
+            <TwoColorText
+              left="COUNTER"
+              right="ACTION"
+              class="text-xl sm:text-xl md:text-2xl lg:text-2xl"
+            />
+            <div class="flex flex-col gap-1 justify-start">
               <BaseButton text="Block foreign aid" />
               <BaseButton text="Block Stealing" />
               <BaseButton text="Block assasination" />
