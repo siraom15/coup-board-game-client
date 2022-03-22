@@ -54,7 +54,8 @@ const challenges = {
       <!-- Turn -->
       <div class="flex flex-col justify-center items-center p-2">
         <TwoColorText
-          left="TURN"
+          left="CURRENT"
+          right="TURN"
           class="text-xl sm:text-xl md:text-2xl lg:text-4xl"
         />
         <div
