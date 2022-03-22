@@ -6,8 +6,8 @@ const cards = [
   },
   {
     id: '2',
-    name: 'inquisitor',
-    imageUrl: '/cards/inq.png',
+    name: 'captain',
+    imageUrl: '/cards/cap.png',
   },
   {
     id: '3',
@@ -18,5 +18,10 @@ const cards = [
     id: '4',
     name: 'contessa',
     imageUrl: '/cards/cont.png',
+  },
+  {
+    id: '4',
+    name: 'duke',
+    imageUrl: '/cards/duke.png',
   },
 ];

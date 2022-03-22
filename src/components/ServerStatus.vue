@@ -1,7 +1,7 @@
 <script setup >
-import { useAttrs } from 'vue';
 
-const attrs = useAttrs();
+
+
 const props = defineProps({
   serverStatus: {
     type: Boolean,
@@ -23,7 +23,7 @@ export default {};
         : ['bg-red-600', 'text-white']
     "
     role="alert"
-    v-bind="attrs"
+    
   >
     <div class="text-md font-normal">
       {{ serverStatus ? 'Connected To Server' : 'Server Error' }}

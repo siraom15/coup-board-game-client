@@ -8,9 +8,7 @@ const randomRoomId = random();
 </script>
 
 <template>
-  <div
-    class="container mx-auto px-0 bg-slate-900 items-center justify-center max-w-[100%]"
-  >
+
     <div class="flex items-center justify-center h-screen">
       <div>
         <div class="flex flex-col justify-center items-center">
@@ -33,7 +31,6 @@ const randomRoomId = random();
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <style scoped></style>

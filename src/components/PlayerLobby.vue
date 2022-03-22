@@ -1,8 +1,8 @@
 <script setup >
 import SignDiv from '../components/SignDiv.vue';
-import { useAttrs } from 'vue';
+
 import { ref } from '@vue/reactivity';
-const attrs = useAttrs();
+
 
 const players = ref(['1,2,3']);
 </script>
@@ -12,7 +12,7 @@ export default {};
 </script>
 
 <template>
-  <div class="max-w-2xl mx-auto text-xs sm:text-xs md:text-base lg:text-lg" v-bind="attrs">
+  <div class="max-w-2xl mx-auto text-xs sm:text-xs md:text-base lg:text-lg" >
     <div
       class="p-10 max-w-md font-bungee bg-yellow-300 hover:bg-blue-light py-2 px-4 border-b-4 border-yellow-400"
     >

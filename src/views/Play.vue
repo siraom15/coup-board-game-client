@@ -1,10 +1,10 @@
-<script setup >
+<script setup>
 import BaseButton from '../components/BaseButton.vue';
 import SignDiv from '../components/SignDiv.vue';
 import PlayerTurn from '../components/PlayerTurn.vue';
 import TwoColorText from '../components/TwoColorText.vue';
 import BaseButtonTooltips from '../components/BaseButtonTooltips.vue';
-
+import YourCard from '../components/YourCard.vue';
 const player1 = {
   name: 'aommie',
 };
@@ -34,79 +34,72 @@ const challenges = {
 </script>
 
 <template>
-  <div
-    class="container mx-auto px-0 bg-slate-900 items-center justify-center max-w-[100%]"
-  >
-    <div class="h-screen">
-      <sign-div text="COUP GAME" />
-      <div class="flex justify-end">
-        <div class="flex">
-          <sign-div text="GameId : 1231231" />
-          <router-link to="/">
-            <BaseButton text="leave room" />
-          </router-link>
+  <div class="h-screen">
+    <sign-div text="COUP GAME" />
+    <div class="flex justify-end">
+      <div class="flex">
+        <sign-div text="GameId : 1231231" />
+        <router-link to="/">
+          <BaseButton text="leave room" />
+        </router-link>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-3 mt-5">
+      <!-- Turn -->
+      <div class="flex flex-col items-center">
+        <span class="text-2xl font-bungee text-center">
+          <span class="text-yellow-300">
+            <span>TURN</span>
+          </span>
+        </span>
+        <div class="mt-2 flex flex-col items-center justify-center gap-2">
+          <PlayerTurn :player="player1" :isCurrentTurn="true" />
+          <PlayerTurn :player="player2" :isCurrentTurn="false" />
+          <PlayerTurn :player="player2" :isCurrentTurn="false" />
+          <PlayerTurn :player="player2" :isCurrentTurn="false" />
         </div>
       </div>
 
-      <div class="grid grid-cols-3 mt-5">
-        <!-- Turn -->
-        <div class="flex flex-col items-center">
-          <span class="text-2xl font-bungee text-center">
-            <span class="text-yellow-300">
-              <span>TURN</span>
-            </span>
-          </span>
-          <div class="mt-2 flex flex-col items-center justify-center gap-2">
-            <PlayerTurn :player="player1" :isCurrentTurn="true" />
-            <PlayerTurn :player="player2" :isCurrentTurn="false" />
-            <PlayerTurn :player="player2" :isCurrentTurn="false" />
-            <PlayerTurn :player="player2" :isCurrentTurn="false" />
-          </div>
-        </div>
+      <!-- current card -->
+      <div class="mt-2 flex flex-col justify-center items-center gap-2">
+        <SignDiv text="Game Log Lastest : P1 Income" />
 
-        <!-- current card -->
-        <div class="mt-2 flex flex-col justify-center items-center gap-2">
-          <SignDiv text="Game Log Lastest : P1 Income" />
+        <TwoColorText left="Your" right="Card" />
+        <YourCard />
+        <sign-div text="Current Coin : 1" />
+      </div>
 
-          <TwoColorText left="Your" right="Card" />
-          <div class="flex justify-center">
-            <img src="/cards/ass.png" alt="" srcset="" class="w-56" />
-            <img src="/cards/cont.png" alt="" srcset="" class="w-56" />
-          </div>
-          <sign-div text="Current Coin : 1" />
-        </div>
-
-        <!-- Actions -->
-        <div class="mt-2 flex flex-col justify-center items-center gap-2">
-          <div class="grid grid-cols-2 gap-3">
-            <div class="flex flex-col">
-              <TwoColorText left="ALL" right="ACTION" />
-              <div class="flex flex-col gap-1 justify-start">
-                <BaseButton text="income (+1)" />
-                <BaseButton text="foreign aid (+2)" />
-                <BaseButton text="tax (+3)" />
-                <BaseButton text="coup (-7)" />
-                <BaseButton text="assasinate (-3)" />
-                <BaseButton text="exchange" />
-                <BaseButton text="steal (+2)" />
-              </div>
-            </div>
-            <div class="flex flex-col">
-              <TwoColorText left="COUNTER" right="ACTION" />
-              <div class="flex flex-col gap-2">
-                <BaseButton text="Block foreign aid" />
-                <BaseButton text="Block Stealing" />
-                <BaseButton text="Block assasination" />
-                <BaseButton text="Pass" color="green" />
-              </div>
+      <!-- Actions -->
+      <div class="mt-2 flex flex-col justify-center items-center gap-2">
+        <div class="grid grid-cols-2 gap-3">
+          <div class="flex flex-col">
+            <TwoColorText left="ALL" right="ACTION" />
+            <div class="flex flex-col gap-1 justify-start">
+              <BaseButton text="income (+1)" />
+              <BaseButton text="foreign aid (+2)" />
+              <BaseButton text="tax (+3)" />
+              <BaseButton text="coup (-7)" />
+              <BaseButton text="assasinate (-3)" />
+              <BaseButton text="exchange" />
+              <BaseButton text="steal (+2)" />
             </div>
           </div>
-          <div class="grid grid-cols-1 gap-3 mt-20">
-            <TwoColorText left="CHALLENGE" right="ACTION" />
-            <div class="flex gap-1 justify-center">
-              <BaseButton text="Challenge" />
+          <div class="flex flex-col">
+            <TwoColorText left="COUNTER" right="ACTION" />
+            <div class="flex flex-col gap-2">
+              <BaseButton text="Block foreign aid" />
+              <BaseButton text="Block Stealing" />
+              <BaseButton text="Block assasination" />
               <BaseButton text="Pass" color="green" />
             </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 gap-3 mt-20">
+          <TwoColorText left="CHALLENGE" right="ACTION" />
+          <div class="flex gap-1 justify-center">
+            <BaseButton text="Challenge" />
+            <BaseButton text="Pass" color="green" />
           </div>
         </div>
       </div>

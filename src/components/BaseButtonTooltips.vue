@@ -1,8 +1,8 @@
 <script setup >
 import BaseButton from './BaseButton.vue';
-import { useAttrs } from 'vue';
 
-const attrs = useAttrs();
+
+
 const props = defineProps({
   btnText: {
     type: String,
