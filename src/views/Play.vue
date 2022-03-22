@@ -43,7 +43,7 @@ const challenges = {
     <SignDiv text="COUP GAME" />
     <div class="flex justify-end">
       <div class="flex">
-        <sign-div text="GameId : 1231231" />
+        <SignDiv text="GameId : 1231231" />
         <router-link to="/">
           <BaseButton text="leave room" />
         </router-link>
@@ -70,7 +70,7 @@ const challenges = {
 
       <!-- current card -->
       <div class="flex flex-col justify-center items-center gap-2 p-2">
-        <SignDiv text="Game Log Lastest : P1 Income" />
+        <SignDiv text="Game Log Lastest : P1 Income" class="animate-pulse" />
         <TwoColorText
           left="Your"
           right="Card"
