@@ -40,7 +40,7 @@ const btnClass = {
 
 <template>
   <button
-    class="font-bungee text-white text-xs sm:text-xs md:text-xs lg:text-base py-2 px-4 border-b-4 border-r-4 rounded shadow-slate-600 shadow-sm"
+    class="font-bungee text-white text-xs sm:text-xs md:text-xs lg:text-base py-2 px-4 border-b-4 border-r-4 rounded shadow-slate-700 shadow-sm"
     :class="[btnClass[props.color]]"
   >
     {{ props.text }}
