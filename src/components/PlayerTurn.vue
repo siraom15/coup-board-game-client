@@ -31,13 +31,13 @@ const bgClass = {
         src="/cards/back.png"
         alt=""
         srcset=""
-        class="w-12 sm:w-12 md:w-16 lg:w-20 xl:w-24"
+        class="w-12 sm:w-10 md:w-12 lg:w-16 xl:w-20"
       />
       <img
         src="/cards/back.png"
         alt=""
         srcset=""
-        class="w-12 sm:w-12 md:w-16 lg:w-20 xl:w-24"
+        class="w-12 sm:w-10 md:w-12 lg:w-16 xl:w-20"
       />
     </div>
     <SignDiv text="Coin : 1" />
