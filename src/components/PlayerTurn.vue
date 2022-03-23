@@ -12,36 +12,20 @@ const props = defineProps({
   },
 });
 const bgClass = {
-  red: [
-    'bg-red-600',
-    'border-red-700',
-    'text-white',
-  ],
-  yellow: [
-    'bg-yellow-300',
-    'border-yellow-400',
-    'text-red-600',
-  ],
-  green: [
-    'bg-green-400',
-    'border-emerald-500 ',
-    'text-white',
-  ],
-  white: ['bg-slate-200', 'border-gray-400','text-red-600'],
+  red: ['bg-red-600', 'border-red-700', 'text-white'],
+  yellow: ['bg-yellow-300', 'border-yellow-400', 'text-red-600'],
+  green: ['bg-green-400', 'border-emerald-500 ', 'text-white'],
+  white: ['bg-slate-200', 'border-gray-400', 'text-red-600'],
   visible: [],
 };
 </script>
 
 <template>
   <div
-    class="text-center py-2 px-4 border-b-4 border-r-4"
-    :class="isCurrentTurn ? bgClass.green : bgClass.white"
+    class="text-center py-1 px-2 border-b-4 border-r-4"
+    :class="isCurrentTurn ? bgClass.red : bgClass.white"
   >
-    <span class="text-lg font-bungee">
-      <span class="">
-        <span>Test</span>
-      </span>
-    </span>
+    <span class="text-sm sm:text-sm md:text-base lg:text-xl font-bungee">1. Test </span>
     <div class="flex justify-center">
       <img
         src="/cards/back.png"
@@ -56,6 +40,6 @@ const bgClass = {
         class="w-12 sm:w-12 md:w-16 lg:w-20 xl:w-24"
       />
     </div>
-    <SignDiv text="Current Coin : 1" />
+    <SignDiv text="Coin : 1" />
   </div>
 </template>

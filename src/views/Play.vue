@@ -6,9 +6,13 @@ import TwoColorText from '../components/TwoColorText.vue';
 import BaseButtonTooltips from '../components/BaseButtonTooltips.vue';
 import YourCard from '../components/YourCard.vue';
 import ChallengeActionModal from '../components/ChallengeActionModal.vue';
+import { ref } from '@vue/reactivity';
+
+const isShowCard = ref(true);
 
 const player1 = {
   name: 'aommie',
+  cards: [],
 };
 
 const player2 = {
@@ -40,17 +44,20 @@ const challenges = {
 <template>
   <div class="h-screen">
     <ChallengeActionModal :isShow="true" />
-    <SignDiv text="COUP GAME" />
-    <div class="flex justify-end">
-      <div class="flex">
-        <SignDiv text="GameId : 1231231" />
-        <router-link to="/">
-          <BaseButton text="leave room" />
-        </router-link>
-      </div>
+    <SignDiv
+      text="COUP GAME"
+      class="text-3xl sm:text-3xl md:text-4xl lg:text-5xl"
+      hidden
+    />
+    <div class="flex">
+      <SignDiv text="GameId : 1231231"  />
+      <SignDiv text="Coup Game" class="flex-auto" />
+      <router-link to="/">
+        <BaseButton text="leave room" />
+      </router-link>
     </div>
 
-    <div class="lg:grid lg:grid-cols-3 flex flex-col">
+    <div class="lg:grid lg:grid-cols-3 flex flex-col  lg:mt-20">
       <!-- Turn -->
       <div class="flex flex-col justify-center items-center p-2">
         <TwoColorText
@@ -59,7 +66,7 @@ const challenges = {
           class="text-xl sm:text-xl md:text-2xl lg:text-4xl"
         />
         <div
-          class="justify-center items-center gap-1 flex flex-row lg:flex lg:flex-col"
+          class="justify-center items-center gap-1 grid grid-cols-3 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 "
         >
           <PlayerTurn :player="player1" :isCurrentTurn="true" />
           <PlayerTurn :player="player2" :isCurrentTurn="false" />
@@ -76,8 +83,11 @@ const challenges = {
           right="Card"
           class="text-xl sm:text-xl md:text-2xl lg:text-4xl"
         />
-        <YourCard />
-        <SignDiv text="Current Coin : 1" />
+        <YourCard :playerCard="player" />
+        <!-- <YourCard  /> -->
+        <BaseButton text="Toggle Card" color="green" />
+        <!-- <p class="text-white font-bungee mt-10">Current Coin : 1</p> -->
+        <SignDiv text="Current Coin : 1" class="mt-5" />
       </div>
 
       <!-- Actions -->
